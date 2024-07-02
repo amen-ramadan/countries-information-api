@@ -4,10 +4,21 @@ import { IoMoonOutline } from "react-icons/io5";
 
 
 export default function Header() {
-  const [isDarkMode, setIsDarkMode] = useState(false);
+
+  const theme = localStorage.getItem("theme");
+  if (theme) {
+    document.documentElement.classList.add(theme);
+  }
+  
+  const [isDarkMode, setIsDarkMode] = useState(theme === "dark" ? true : false);
   const darkModeHandler = () => {
     setIsDarkMode(!isDarkMode);
     document.documentElement.classList.toggle("dark");
+    if (isDarkMode) {
+      localStorage.setItem("theme", "light");
+    } else {
+      localStorage.setItem("theme", "dark");
+    }
 }
   return (
 
