@@ -27,9 +27,9 @@ function App() {
             <Routes>
               <Route path="/" element={
                 <>
-                  <div className='flex justify-between items-center max-[640px]:flex-col max-[640px]:items-start'>
+                  <div className='flex justify-between items-center md:flex-col md:items-start'>
                     <SearchInput />
-                    <Filter onFilterChange={handleFilterChange}/>
+                    <Filter onFilterChange={handleFilterChange} filterRegion={filterRegion}/>
                   </div>
                   <CardSection filterRegion={filterRegion}/>
                 </>

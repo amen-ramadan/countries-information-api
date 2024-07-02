@@ -3,13 +3,14 @@ import { IoIosArrowDown, IoIosArrowUp } from 'react-icons/io';
 
 interface CustomDropdown {
   onFilterChange: (value: string) => void;
+  filterRegion: string;
 }
 
 
-export default function CustomDropdown({ onFilterChange }: CustomDropdown) {
+export default function CustomDropdown({ onFilterChange, filterRegion }: CustomDropdown) {
   const [isOpen, setIsOpen] = useState(false);
-  const [selectedValue, setSelectedValue] = useState('Filter by Region');
-  const options: string[] = ['every where','Africa', 'America', 'Asia', 'Europe', 'Oceania'];
+  const [, setSelectedValue] = useState('Filter by Region');
+  const options: string[] = ['every where','Africa', 'Americas', 'Asia', 'Europe', 'Oceania'];
   const dropdownRef = useRef<HTMLDivElement>(null); // إضافة مرجع لقائمة dropdown
 
   const toggleDropdown = () => setIsOpen(!isOpen);
@@ -44,7 +45,7 @@ export default function CustomDropdown({ onFilterChange }: CustomDropdown) {
         onClick={toggleDropdown}
         className="w-full h-full text-sm sm:text-md border rounded-md bg-white text-gray-700 shadow-md focus:outline-none flex items-center justify-between px-4"
       >
-        {selectedValue}
+        {filterRegion}
         {isOpen ? (
           <IoIosArrowUp className="text-gray-500" />
         ) : (
@@ -57,7 +58,7 @@ export default function CustomDropdown({ onFilterChange }: CustomDropdown) {
             <li
               key={option}
               onClick={() => handleOptionClick(option)}
-              className="cursor-pointer py-2 hover:bg-gray-100 first:mt-4 last:mb-4 pl-6"
+              className="cursor-pointer py-1 font-light text-sm hover:bg-gray-100 first:mt-2 last:mb-2 pl-6"
             >
               {option}
             </li>
