@@ -9,7 +9,7 @@ export default function SearchInput() {
     <div className="relative w-full sm:w-[480px] ">
       <label
         htmlFor="search"
-        className=" flex items-center bg-white sm:ml-14 px-4 py-4 shadow-md rounded-md "
+        className=" flex items-center bg-white px-4 py-4 shadow-md rounded-md "
       >
         <IoIosSearch className="text-xl text-gray-400 ml-4 font-bold" />
         <input

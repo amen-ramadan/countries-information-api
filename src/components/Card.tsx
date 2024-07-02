@@ -5,8 +5,8 @@ import { CardProps } from '../types';
 
 export default function Card({name, population, region, capital, flag}: CardProps) {
   return (
-      <div className="shadow-lg rounded-lg pb-8 mx-auto overflow-hidden">
-          <img src={flag} alt="image-card" className='rounded-t-lg size-48 w-full object-cover'/>
+      <div className="shadow-lg rounded-lg pb-8 mx-auto overflow-hidden h-full w-full">
+          <img src={flag} alt="image-card" className='rounded-t-lg w-full object-cover h-[196px]'/>
         <h3 className="px-6 pt-6 font-bold text-lg whitespace-nowrap truncate">{name}</h3>
         <div className="px-6 py-4">
           <p className="text-gray-700 text-base pb-1">
