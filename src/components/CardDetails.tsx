@@ -23,7 +23,7 @@ export default function CardDetails() {
     <div className="container mx-auto p-4">
       <Link
         to="/"
-        className="inline-flex items-center mb-4 py-2 px-10 rounded shadow-[0_1px_15px_1px_rgba(0,0,0,0.3)] bg-white hover:bg-gray-100"
+        className="inline-flex items-center mb-4 py-2 px-10 rounded shadow-[0_1px_15px_1px_rgba(0,0,0,0.2)] bg-white hover:bg-gray-100"
       >
         <span className="mr-2 text-lg">←</span> Back
       </Link>
@@ -33,15 +33,15 @@ export default function CardDetails() {
             alt={`${item?.name} flag`}
             className="w-full h-72 object-cover mb-6"
         />
-        <h2 className="text-3xl font-bold mb-6 mt-10">{item.name}</h2>
+        <h2 className="text-3xl font-bold mb-8 mt-10">{item.name}</h2>
         <CountryDetail details={details} />
+        <p className="font-medium mt-8">Border Countries:</p>
         <div className="flex flex-wrap gap-2 mt-4">
-          <p className="font-bold">Border Countries:</p>
           {item.borders?.length ? (
             item.borders.map((border: string, index: Key) => (
               <span
                 key={index}
-                className="border border-gray-300 p-2 rounded-md bg-white"
+                className="font-extralight py-2 px-10 rounded shadow-[0_1px_15px_1px_rgba(0,0,0,0.1)] bg-white hover:bg-gray-100"
               >
                 {border}
               </span>
