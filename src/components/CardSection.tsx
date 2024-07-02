@@ -28,9 +28,9 @@ export default function CardSection({filterRegion}: CardSectionProps) {
   if (loading) return <div>Loading...</div>;
 
   return (
-    <div className="mt-10 flex flex-col gap-10 items-center">
+    <div className="mt-10 w-full flex flex-col gap-20 items-center sm:flex-row sm:justify-center sm:items-start sm:flex-wrap">
       {filteredCountries.map((card, index) => (
-        <Link to={`/details/${card.name}`} key={index}>
+        <Link to={`/details/${card.name}`} key={index} className=" size-72 mb-24">
           <Card
             name={card.name}
             population={card.population}

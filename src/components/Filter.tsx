@@ -40,7 +40,7 @@ export default function CustomDropdown({ onFilterChange, filterRegion }: CustomD
   }, [isOpen]);
 
   return (
-    <div ref={dropdownRef} className="sm:basis-1/4 w-2/4 h-[60px] sm:mt-0 mt-12 relative">
+    <div ref={dropdownRef} className="sm:basis-1/4 w-2/4 h-[60px] sm:mt-0 mt-10 relative">
       <button
         onClick={toggleDropdown}
         className="w-full h-full text-sm sm:text-md border rounded-md bg-white text-gray-700 shadow-md focus:outline-none flex items-center justify-between px-4"

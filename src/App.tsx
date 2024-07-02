@@ -22,12 +22,12 @@ function App() {
     <CountryProvider>
       <Router>
         <Header />
-        <div className="bg-zinc-100 h-full pt-8">
+        <div className="bg-[#fafafa] h-full pt-8">
           <div className='mx-auto px-4'>
             <Routes>
               <Route path="/" element={
                 <>
-                  <div className='flex justify-between items-center md:flex-col md:items-start'>
+                  <div className='flex justify-between items-center flex-wrap md:flex-col md:items-start'>
                     <SearchInput />
                     <Filter onFilterChange={handleFilterChange} filterRegion={filterRegion}/>
                   </div>
