@@ -18,10 +18,10 @@ export default function SearchFilter({ search }: { search: string }) {
   return (
     <>
       {search ? (
-        <ul className="absolute w-full bg-white border mt-1 rounded-md shadow-lg z-10 max-h-60 overflow-y-auto">
+        <ul className="absolute w-full bg-white dark:bg-[#2b3743] mt-1 rounded-md shadow-lg z-10 max-h-60 overflow-y-auto">
           {filterCountries.map((country) => (
             <Link to={`/details/${country.name}`}>
-              <li key={country.name} className="p-2 hover:bg-gray-100">
+              <li key={country.name} className="p-2 hover:bg-gray-100 dark:hover:bg-[#2b3743]">
                 {country.name}
               </li>
             </Link>

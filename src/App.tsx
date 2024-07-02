@@ -19,8 +19,8 @@ function App() {
     <CountryProvider>
       <Router>
         <Header />
-        <div className=" h-svh pt-10 bg-[#fafafa] ">
-          <div className="container mx-auto px-8 max-w-full overflow-hidden">
+        <div className=" h-screen dark:bg-[#212e37] dark:text-white bg-[#fafafa] ">
+          <div className="container mx-auto px-8 max-w-full overflow-hidden pt-10 dark:bg-[#212e37] dark:text-white bg-[#fafafa] ">
             <Routes>
               <Route
                 path="/"

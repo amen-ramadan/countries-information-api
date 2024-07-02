@@ -9,11 +9,11 @@ export default function CardDetails() {
   const { name } = useParams<{ name: string }>();
   const { countries, loading } = useCountryContext();
 
-  if (loading) return <div>Loading...</div>;
+  if (loading) return <div className="text-center dark:text-white">Loading...</div>;
 
   const item = countries.find((country) => country.name === name);
 
-  if (!item) return <div>Country not found</div>;
+  if (!item) return <div className="text-center dark:text-white">Country not found</div>;
 
   const details = getCountryDetails(item);
 
@@ -21,7 +21,7 @@ export default function CardDetails() {
     <div className="container mx-auto p-4">
       <Link
         to="/"
-        className="inline-flex items-center  py-2 px-6 md:px-10 rounded shadow-[0_1px_15px_1px_rgba(0,0,0,0.2)] bg-white hover:bg-gray-100"
+        className="inline-flex items-center  py-2 px-6 md:px-10 rounded shadow-[0_1px_15px_1px_rgba(0,0,0,0.2)] bg-white hover:bg-gray-100 dark:bg-[#2b3743] dark:text-white dark:hover:bg-[#212e37]"
       >
         <span className="mr-2 text-lg">←</span> Back
       </Link>
@@ -42,7 +42,7 @@ export default function CardDetails() {
                   item.borders.map((border: string, index: Key) => (
                     <span
                       key={index}
-                      className="font-extralight py-2 px-10 rounded shadow-[0_1px_15px_1px_rgba(0,0,0,0.1)] bg-white hover:bg-gray-100"
+                      className="font-extralight py-2 px-10 rounded shadow-[0_1px_15px_1px_rgba(0,0,0,0.1)] bg-white dark:bg-[#2b3743] dark:text-white"
                     >
                       {border}
                     </span>
