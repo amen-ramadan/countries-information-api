@@ -27,7 +27,7 @@ export const CountryProvider = ({ children }: { children: ReactNode }) => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch('../data.json')
+    fetch('/data.json')
       .then(response => response.json())
       .then(data => {
         setCountries(data);
