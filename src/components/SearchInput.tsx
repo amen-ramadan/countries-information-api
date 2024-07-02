@@ -6,7 +6,7 @@ export default function SearchInput() {
   const [search, setSearch] = useState("");
 
   return (
-    <div className="relative sm:basis-1/2 w-full">
+    <div className="relative w-full sm:w-[480px] ">
       <label
         htmlFor="search"
         className=" flex items-center bg-white sm:ml-14 px-4 py-4 shadow-md rounded-md "
