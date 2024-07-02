@@ -3,15 +3,33 @@
 import Card from "./Card.js";
 import { Link } from "react-router-dom";
 import { useCountryContext } from "../context/context";
+import { useEffect, useState } from "react";
 
-export default function CardSection() {
+
+interface CardSectionProps {
+  filterRegion: string;
+}
+
+
+export default function CardSection({filterRegion}: CardSectionProps) {
   const { countries, loading } = useCountryContext();
+  const [filteredCountries, setFilteredCountries] = useState(countries);
+
+
+  useEffect(() => {
+    if (filterRegion === "every where") {
+      setFilteredCountries(countries);
+    } else {
+      setFilteredCountries(countries.filter((country) => country.region === filterRegion));
+    }
+  }, [filterRegion, countries]);
+
 
   if (loading) return <div>Loading...</div>;
 
   return (
     <div className="mt-10 flex flex-col gap-10 items-center">
-      {countries.map((card, index) => (
+      {filteredCountries.map((card, index) => (
         <Link to={`/details/${card.name}`} key={index}>
           <Card
             name={card.name}

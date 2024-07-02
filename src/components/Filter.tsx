@@ -1,16 +1,22 @@
 import { useState, useEffect, useRef } from 'react';
 import { IoIosArrowDown, IoIosArrowUp } from 'react-icons/io';
 
-export default function CustomDropdown() {
+interface CustomDropdown {
+  onFilterChange: (value: string) => void;
+}
+
+
+export default function CustomDropdown({ onFilterChange }: CustomDropdown) {
   const [isOpen, setIsOpen] = useState(false);
   const [selectedValue, setSelectedValue] = useState('Filter by Region');
-  const options: string[] = ['Africa', 'America', 'Asia', 'Europe', 'Oceania'];
+  const options: string[] = ['every where','Africa', 'America', 'Asia', 'Europe', 'Oceania'];
   const dropdownRef = useRef<HTMLDivElement>(null); // إضافة مرجع لقائمة dropdown
 
   const toggleDropdown = () => setIsOpen(!isOpen);
 
   const handleOptionClick = (value: string) => {
     setSelectedValue(value);
+    onFilterChange(value);
     setIsOpen(false);
   };
 

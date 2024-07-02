@@ -6,11 +6,18 @@ import CardSection from './components/CardSection'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import CardDetails from './components/CardDetails'
 import { CountryProvider } from './context/context'
+import { useState } from 'react'
 
 
 
 function App() {
+  const [filterRegion, setFilterRegion] = useState('every where');
   
+
+  const handleFilterChange = (region: string) => {
+    setFilterRegion(region);
+  };
+
   return (
     <CountryProvider>
       <Router>
@@ -22,9 +29,9 @@ function App() {
                 <>
                   <div className='flex justify-between items-center max-[640px]:flex-col max-[640px]:items-start'>
                     <SearchInput />
-                    <Filter />
+                    <Filter onFilterChange={handleFilterChange}/>
                   </div>
-                  <CardSection />
+                  <CardSection filterRegion={filterRegion}/>
                 </>
               } />
               <Route path="/details/:name" element={<CardDetails />} />
