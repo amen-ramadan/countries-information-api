@@ -1,5 +1,7 @@
 # Project: countries-information-api
 
+You can preview the site here: [countries-information-api](https://countries-information-p06x09i4t-amen-ramadans-projects.vercel.app/)
+
 ## Description:
 This project is a challenge from Frontend Mentor. It is built using TypeScript, React, and Tailwind CSS. The main functionalities of the project are as follows:
 
